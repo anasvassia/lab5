@@ -382,7 +382,7 @@ people in a given family. Be sure you count all spouses and children.
 
 let count_people (f : family) : int = 
   match f with
-  | Single babe -> 1
+  | Single _ -> 1
   | Family(_, _, fam) -> 2 + List.length fam ;;
 
 
