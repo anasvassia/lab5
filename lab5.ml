@@ -346,7 +346,11 @@ as well.
 (*
 let new_child (n : string) (fav : color) (d : date) : person = 
   {name = n; favorite = (validated_rgb fav); birthdate = (validated_date d)} ;;
-  *)
+  
+  Error: This expression has type L.family = Lab5.family 
+but an expression was expected of type L.person = Lab5.person 
+*)
+
   let new_child (name : string) (col : color) (birth : date) : family =
     Single { name;
              favorite = validated_rgb col;
