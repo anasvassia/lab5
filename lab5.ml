@@ -343,9 +343,14 @@ and returns a Single. If you completed the validity functions that
 ensure the invariants are preserved for color and date, use them here
 as well.
 ......................................................................*)
-
+(*
 let new_child (n : string) (fav : color) (d : date) : person = 
   {name = n; favorite = (validated_rgb fav); birthdate = (validated_date d)} ;;
+  *)
+  let new_child (name : string) (col : color) (birth : date) : family =
+    Single { name;
+             favorite = validated_rgb col;
+             birthdate = validated_date birth } ;;
 
 (*......................................................................
 Exercise 11: Write a function that allows a person to marry in to a
