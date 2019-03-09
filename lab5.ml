@@ -186,8 +186,8 @@ let convert_to_rgb (c : color) : (int * int * int) =
     | Crimson -> (164, 16, 52) 
     | Orange -> (255, 165, 0) 
     | Yellow -> (255, 255, 0)
-    | Green -> (0, 64, 0)
-    | Blue ->  (0, 255, 255)
+    | Green -> (0, 25, 0)
+    | Blue ->  (0, 0, 255)
     | Indigo -> (75, 0, 130)
     | Violet -> (240, 130, 240);;
 
