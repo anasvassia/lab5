@@ -372,7 +372,7 @@ to behave in corner cases.
 
 let add_to_family (parents : family) (child : family) : family = 
   match parents with
-  | Single babe ->  raise (Family_Trouble "please obey get married first")
+  | Single _ ->  raise (Family_Trouble "please obey get married first")
   | Family(spouse1, spouse2, fam) ->  Family(spouse1, spouse2, child::fam) ;;
 
 (*......................................................................
@@ -383,6 +383,6 @@ people in a given family. Be sure you count all spouses and children.
 let count_people (f : family) : int = 
   match f with
   | Single babe -> 1
-  | Family(spouse1, spouse2, fam) -> 2 + List.length fam ;;
+  | Family(_, _, fam) -> 2 + List.length fam ;;
 
 
