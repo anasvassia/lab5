@@ -186,7 +186,7 @@ let convert_to_rgb (c : color) : (int * int * int) =
     | Crimson -> (164, 16, 52) 
     | Orange -> (255, 165, 0) 
     | Yellow -> (255, 255, 0)
-    | Green -> (0, 25, 0)
+    | Green -> (0, 255, 0)
     | Blue ->  (0, 0, 255)
     | Indigo -> (75, 0, 130)
     | Violet -> (240, 130, 240);;
@@ -388,10 +388,17 @@ let add_to_family (parents : family) (child : family) : family =
 Exercise 13: Complete the function below that counts the number of
 people in a given family. Be sure you count all spouses and children.
 ......................................................................*)
-
+(*
 let count_people (f : family) : int = 
   match f with
   | Single _ -> 1
   | Family(_, _, fam) -> 2 + List.length fam ;;
+  *)
+
+  let rec count_people (fam: family) : int =
+    match fam with
+    | Single _ -> 1
+    | Family (_, _, c) -> 2 + List.fold_left (+) 0
+                          (List.map count_people c) ;;
 
 
